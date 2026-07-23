@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mia-ether.github.io/sitemap.xml
