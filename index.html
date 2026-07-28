@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIA_Ether — Data · AI · Sound · Code</title>
+  <meta name="description" content="MIA_Ether · Builder / Creator. Exploring data, AI and creative experiments. Based in Guangzhou." />
+  <meta name="author" content="MIA_Ether" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mia-ether.github.io/" />
+  <meta property="og:title" content="MIA_Ether — Data · AI · Sound · Code" />
+  <meta property="og:description" content="Builder / Creator. Exploring the edge of data, AI and creative technology." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MIA03ther" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip</a>
+
+  <div class="logo-menu" id="logoMenu" hidden>
+    <div class="logo-menu-panel">
+      <button class="logo-menu-close" id="logoMenuClose" aria-label="Close">×</button>
+      <p class="mono logo-menu-title">// SYSTEM MENU</p>
+      <button class="logo-menu-item" data-action="terminal">Open Terminal</button>
+      <button class="logo-menu-item" data-action="theme">Toggle Theme</button>
+      <button class="logo-menu-item" data-action="lang">中 / EN</button>
+      <a class="logo-menu-item" href="https://github.com/MIA-Ether" target="_blank" rel="noopener">GitHub →</a>
+      <a class="logo-menu-item" href="https://music.163.com/#/user/home?id=13872715631" target="_blank" rel="noopener">NetEase Cloud →</a>
+    </div>
+  </div>
+
+  <div class="terminal-overlay" id="terminalOverlay" hidden>
+    <div class="terminal-window">
+      <div class="terminal-bar">
+        <span class="terminal-dots"><i></i><i></i><i></i></span>
+        <span class="mono terminal-title">mia@ether:~</span>
+        <button class="terminal-close" id="terminalClose" aria-label="Close">×</button>
+      </div>
+      <div class="terminal-body" id="terminalBody"></div>
+      <div class="terminal-input-row">
+        <span class="mono t-prompt"><span class="t-green">mia@ether</span>:<span class="t-cyan">~</span>$</span>
+        <input type="text" id="terminalInput" class="terminal-input mono" autocomplete="off" spellcheck="false" placeholder="type help" />
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <button type="button" class="logo" id="logoBtn" aria-label="Menu">
+        <span class="logo-mark">M</span>
+        <span class="logo-text">MIA_Ether</span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+        <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
+        <li><a href="#lab" data-i18n="navLab">Lab</a></li>
+        <li><a href="#blog" data-i18n="navBlog">Blog</a></li>
+        <li><a href="#contact" data-i18n="navConnect">Connect</a></li>
+        <li><a href="https://github.com/MIA-Ether" target="_blank" rel="noopener" class="nav-github">GitHub</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="icon-btn" id="langToggle" aria-label="Language"><span class="mono" id="langLabel">EN</span></button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Theme">
+          <span class="icon-sun"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></span>
+          <span class="icon-moon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+        <button class="icon-btn" id="termBtn" aria-label="Terminal"><span class="mono" style="font-size:0.7rem">&gt;_</span></button>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-inner">
+        <div class="hero-badge"><span class="pulse"></span><span class="mono" data-i18n="heroBadge">STATUS // ONLINE</span></div>
+        <h1 class="hero-title"><span class="glitch" data-text="MIA_Ether">MIA_Ether</span></h1>
+        <p class="hero-tagline mono">Data · AI · Sound · Code</p>
+        <p class="hero-sub" data-i18n="heroSub">Builder / Creator · Based in Guangzhou</p>
+        <div class="hero-actions">
+          <a href="https://github.com/MIA-Ether" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+          <button type="button" class="btn btn-ghost" id="openTermHero" data-i18n="btnTerminal">Open Terminal</button>
+          <a href="#projects" class="btn btn-ghost" data-i18n="btnProjects">Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container">
+        <h2 class="section-label"><span class="mono">01</span> <span data-i18n="aboutTitle">About</span></h2>
+        <div class="about-grid">
+          <div class="about-content">
+            <p class="about-lead" data-i18n="aboutLead">I build things at the edge of data, intelligence and imagination.</p>
+            <p data-i18n="aboutP1">目前在广州读书（广外），日常在代码、数据和声音之间切换。喜欢把技术用在真正让自己兴奋的事情上——无论是分析数字、写小工具，还是做电子音乐、挖漫画世界观。</p>
+            <p data-i18n="aboutP2">不急着贴单一标签。更在意持续做、持续记录、把想象变成能跑的东西。</p>
+          </div>
+          <div class="about-meta">
+            <div class="meta-item"><span class="meta-label">Base</span><span class="meta-value">Guangzhou</span></div>
+            <div class="meta-item"><span class="meta-label">Mode</span><span class="meta-value">Builder · Explorer</span></div>
+            <div class="meta-item"><span class="meta-label">Stack</span><span class="meta-value">Python · Data · AI</span></div>
+            <div class="meta-item"><span class="meta-label">Signal</span><span class="meta-value">Music · Anime · Lab</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-label"><span class="mono">02</span> <span data-i18n="projectsTitle">Projects</span></h2>
+          <p class="section-desc" data-i18n="projectsDesc">Things I ship and things I’m building toward.</p>
+        </div>
+        <div class="filter-bar" id="filterBar">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="python">Python</button>
+          <button type="button" class="filter-btn" data-filter="data">Data</button>
+          <button type="button" class="filter-btn" data-filter="ai">AI</button>
+          <button type="button" class="filter-btn" data-filter="cli">CLI</button>
+          <button type="button" class="filter-btn" data-filter="creative">Creative</button>
+        </div>
+        <div class="project-grid" id="projectGrid">
+          <article class="project-card featured" data-tags="python cli data">
+            <div class="project-status"><span class="status-dot live"></span><span class="mono">LIVE</span></div>
+            <h3 class="project-title"><a href="https://github.com/MIA-Ether/pc-build-config-generator" target="_blank" rel="noopener">pc-build-config-generator</a></h3>
+            <p class="project-desc" data-i18n="proj1Desc">大学生购机避坑 CLI。按场景、预算、设备类型生成配置建议。</p>
+            <div class="project-tags"><span>Python</span><span>CLI</span><span>Data</span></div>
+            <div class="project-footer"><a href="https://github.com/MIA-Ether/pc-build-config-generator" class="project-link" target="_blank" rel="noopener">Open on GitHub →</a></div>
+          </article>
+          <article class="project-card" data-tags="data python">
+            <div class="project-status"><span class="status-dot planned"></span><span class="mono">NEXT</span></div>
+            <h3 class="project-title">Data & Finance Experiments</h3>
+            <p class="project-desc" data-i18n="proj2Desc">数据与决策相关的小实验。用代码把抽象变具体。</p>
+            <div class="project-tags"><span>Data</span><span>Python</span><span>Analysis</span></div>
+            <div class="project-footer"><span class="project-link muted">In progress</span></div>
+          </article>
+          <article class="project-card" data-tags="ai creative">
+            <div class="project-status"><span class="status-dot planned"></span><span class="mono">LAB</span></div>
+            <h3 class="project-title">Creative & AI Tools</h3>
+            <p class="project-desc" data-i18n="proj3Desc">AI 辅助创作与跨界小工具。技术只是素材的一部分。</p>
+            <div class="project-tags"><span>AI</span><span>Creative</span></div>
+            <div class="project-footer"><span class="project-link muted">Ongoing</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-label"><span class="mono">03</span> <span data-i18n="skillsTitle">Skills</span></h2>
+          <p class="section-desc" data-i18n="skillsDesc">Current signal strength — still leveling up.</p>
+        </div>
+        <div class="skills-layout">
+          <div class="radar-wrap">
+            <svg class="radar" viewBox="0 0 200 200" aria-hidden="true">
+              <g class="radar-grid">
+                <polygon points="100,20 176,67 147,155 53,155 24,67" />
+                <polygon points="100,40 158,75 138,140 62,140 42,75" />
+                <polygon points="100,60 140,83 128,125 72,125 60,83" />
+                <polygon points="100,80 122,91 116,110 84,110 78,91" />
+                <line x1="100" y1="100" x2="100" y2="20" /><line x1="100" y1="100" x2="176" y2="67" />
+                <line x1="100" y1="100" x2="147" y2="155" /><line x1="100" y1="100" x2="53" y2="155" />
+                <line x1="100" y1="100" x2="24" y2="67" />
+              </g>
+              <polygon class="radar-area" points="100,35 165,75 130,145 60,140 40,80" />
+              <circle class="radar-dot" cx="100" cy="35" r="3" /><circle class="radar-dot" cx="165" cy="75" r="3" />
+              <circle class="radar-dot" cx="130" cy="145" r="3" /><circle class="radar-dot" cx="60" cy="140" r="3" />
+              <circle class="radar-dot" cx="40" cy="80" r="3" />
+            </svg>
+            <div class="radar-labels">
+              <span style="top:2%;left:50%">Python</span>
+              <span style="top:28%;left:88%">Data</span>
+              <span style="top:78%;left:72%">AI</span>
+              <span style="top:78%;left:18%">Creative</span>
+              <span style="top:28%;left:2%">Tools</span>
+            </div>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar"><div class="skill-bar-label"><span>Python</span><span>75%</span></div><div class="skill-track"><div class="skill-fill" data-p="75"></div></div></div>
+            <div class="skill-bar"><div class="skill-bar-label"><span>Data Analysis</span><span>60%</span></div><div class="skill-track"><div class="skill-fill" data-p="60"></div></div></div>
+            <div class="skill-bar"><div class="skill-bar-label"><span>AI Tools</span><span>55%</span></div><div class="skill-track"><div class="skill-fill" data-p="55"></div></div></div>
+            <div class="skill-bar"><div class="skill-bar-label"><span>Creative / Sound</span><span>50%</span></div><div class="skill-track"><div class="skill-fill" data-p="50"></div></div></div>
+            <div class="skill-bar"><div class="skill-bar-label"><span>Web / CLI</span><span>45%</span></div><div class="skill-track"><div class="skill-fill" data-p="45"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lab section" id="lab">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-label"><span class="mono">04</span> <span data-i18n="labTitle">Lab</span></h2>
+          <p class="section-desc" data-i18n="labDesc">Side signals. Where code meets other frequencies.</p>
+        </div>
+        <div class="lab-grid">
+          <div class="lab-card"><div class="lab-icon">♪</div><h3 data-i18n="labMusic">Electronic Music</h3><p data-i18n="labMusicDesc">EDM / 电子向。节奏与氛围的实验场。</p></div>
+          <div class="lab-card"><div class="lab-icon">◇</div><h3 data-i18n="labAnime">Anime & Manga</h3><p data-i18n="labAnimeDesc">二次元叙事与视觉。世界观是另一种系统。</p></div>
+          <div class="lab-card"><div class="lab-icon">◈</div><h3 data-i18n="labAI">AI Playground</h3><p data-i18n="labAIDesc">生成与协作。模型是工具不是魔法。</p></div>
+          <div class="lab-card"><div class="lab-icon">▣</div><h3 data-i18n="labData">Data Sketches</h3><p data-i18n="labDataDesc">小数据、小图表、小结论。</p></div>
+          <div class="lab-card"><div class="lab-icon">◎</div><h3 data-i18n="labExp">Experiments</h3><p data-i18n="labExpDesc">跨界试错：代码 × 声音 × 图像。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="music section" id="music">
+      <div class="container">
+        <div class="music-card">
+          <div class="music-info">
+            <span class="mono music-label" data-i18n="musicLabel">// NOW LISTENING</span>
+            <h3 data-i18n="musicTitle">NetEase Cloud Music</h3>
+            <p data-i18n="musicDesc">歌单与日常循环 · 点进去听我在听什么</p>
+          </div>
+          <a class="btn btn-primary" href="https://music.163.com/#/user/home?id=13872715631" target="_blank" rel="noopener" data-i18n="musicBtn">Open Profile →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog section" id="blog">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-label"><span class="mono">05</span> <span data-i18n="blogTitle">Blog</span></h2>
+          <p class="section-desc" data-i18n="blogDesc">Notes, logs and short writes. Coming online.</p>
+        </div>
+        <div class="blog-list">
+          <article class="blog-item">
+            <span class="blog-date mono">2026</span>
+            <div>
+              <h3 data-i18n="blog1Title">Building in public — first commit</h3>
+              <p data-i18n="blog1Desc">个人主页上线与一些想法。更多短文将放在这里或外链。</p>
+            </div>
+            <span class="blog-tag mono">Soon</span>
+          </article>
+          <article class="blog-item muted">
+            <span class="blog-date mono">—</span>
+            <div>
+              <h3 data-i18n="blog2Title">More posts loading…</h3>
+              <p data-i18n="blog2Desc">技术笔记 · 学习日志 · 赛博碎碎念</p>
+            </div>
+            <span class="blog-tag mono">WIP</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline section" id="timeline">
+      <div class="container">
+        <h2 class="section-label"><span class="mono">06</span> <span data-i18n="pathTitle">Path</span></h2>
+        <div class="timeline-track">
+          <div class="timeline-item">
+            <div class="timeline-year mono">2026</div>
+            <div class="timeline-content"><h3 data-i18n="path1Title">Boot</h3><p data-i18n="path1Desc">入学 · 打基础 · 做小工具 · 公开记录</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year mono">2027</div>
+            <div class="timeline-content"><h3 data-i18n="path2Title">Explore</h3><p data-i18n="path2Desc">数据与 AI 项目 · 对接真实场景 · 输出作品</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year mono">2028+</div>
+            <div class="timeline-content"><h3 data-i18n="path3Title">Ship</h3><p data-i18n="path3Desc">作品集 · 协作与开源 · 把喜欢变成能力</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-label"><span class="mono">07</span> <span data-i18n="connectTitle">Connect</span></h2>
+          <p class="section-desc" data-i18n="connectDesc">Find me across the network.</p>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="https://x.com/MIA03ther" target="_blank" rel="noopener"><span class="contact-label mono">X / TWITTER</span><span class="contact-value">@MIA03ther</span></a>
+          <a class="contact-card" href="https://space.bilibili.com/451863946" target="_blank" rel="noopener"><span class="contact-label mono">BILIBILI</span><span class="contact-value">space/451863946</span></a>
+          <a class="contact-card" href="https://github.com/MIA-Ether" target="_blank" rel="noopener"><span class="contact-label mono">GITHUB</span><span class="contact-value">MIA-Ether</span></a>
+          <a class="contact-card" href="https://music.163.com/#/user/home?id=13872715631" target="_blank" rel="noopener"><span class="contact-label mono">NETEASE</span><span class="contact-value">Music Profile</span></a>
+          <a class="contact-card" href="mailto:mia03ther@gmail.com"><span class="contact-label mono">EMAIL</span><span class="contact-value">mia03ther@gmail.com</span></a>
+          <a class="contact-card" href="mailto:2452597472@qq.com"><span class="contact-label mono">EMAIL · QQ</span><span class="contact-value">2452597472@qq.com</span></a>
+        </div>
+        <p class="contact-note mono">QQ // 2452597472</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="logo-mark">M</span><span>MIA_Ether</span></div>
+      <p class="footer-copy mono">BUILDING · LISTENING · SHIPPING</p>
+      <div class="footer-links">
+        <a href="https://github.com/MIA-Ether" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/MIA03ther" target="_blank" rel="noopener">X</a>
+        <a href="https://music.163.com/#/user/home?id=13872715631" target="_blank" rel="noopener">Music</a>
+        <a href="#contact">Connect</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
