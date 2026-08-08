@@ -1,6 +1,5 @@
 /**
- * MIA_Ether Portfolio v4
- * Theme · Lang · Terminal · Filters · Cursor · Progress · Particles · Radar
+ * MIA_Ether Portfolio — Theme · Lang · Terminal · Filters · Cursor · Progress · Particles
  */
 (() => {
   "use strict";
@@ -9,61 +8,66 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
-  /* ---------- i18n ---------- */
   const dict = {
     zh: {
-      navProjects: "Projects", navSkills: "Skills", navLab: "Lab", navBlog: "Blog", navConnect: "Connect",
-      heroBadge: "STATUS // ONLINE", heroSub: "Builder / Creator · Based in Guangzhou",
-      btnTerminal: "打开终端", btnProjects: "项目",
-      aboutTitle: "About", aboutLead: "我在数据、智能与想象的交界处做事。",
-      aboutP1: "目前在广州读书（广外），日常在代码、数据和声音之间切换。喜欢把技术用在真正让自己兴奋的事情上——无论是分析数字、写小工具，还是做电子音乐、挖漫画世界观。",
-      aboutP2: "不急着贴单一标签。更在意持续做、持续记录、把想象变成能跑的东西。",
-      projectsTitle: "Projects", projectsDesc: "已经上线的，和正在路上的。",
-      proj1Desc: "大学生购机避坑 CLI。按场景、预算、设备类型生成配置建议。",
-      proj2Desc: "数据与决策相关的小实验。用代码把抽象变具体。",
-      proj3Desc: "AI 辅助创作与跨界小工具。技术只是素材的一部分。",
-      skillsTitle: "Skills", skillsDesc: "当前信号强度 — 仍在升级中。",
-      labTitle: "Lab", labDesc: "侧信道。代码碰到其他频率的地方。",
-      labMusic: "电子音乐", labMusicDesc: "EDM / 电子向。节奏与氛围的实验场。",
-      labAnime: "二次元", labAnimeDesc: "叙事与视觉。世界观是另一种系统。",
-      labAI: "AI 实验场", labAIDesc: "生成与协作。模型是工具不是魔法。",
-      labData: "数据速写", labDataDesc: "小数据、小图表、小结论。",
-      labExp: "随机实验", labExpDesc: "跨界试错：代码 × 声音 × 图像。",
-      musicLabel: "// NOW LISTENING", musicTitle: "网易云音乐", musicDesc: "歌单与日常循环 · 点进去听我在听什么", musicBtn: "打开主页 →",
-      blogTitle: "Blog", blogDesc: "笔记、日志与短写。陆续上线。",
-      blog1Title: "Building in public — 第一次提交", blog1Desc: "个人主页上线与一些想法。更多短文将放在这里或外链。",
-      blog2Title: "更多文章加载中…", blog2Desc: "技术笔记 · 学习日志 · 赛博碎碎念",
-      pathTitle: "Path", path1Title: "Boot", path1Desc: "入学 · 打基础 · 做小工具 · 公开记录",
-      path2Title: "Explore", path2Desc: "数据与 AI 项目 · 对接真实场景 · 输出作品",
-      path3Title: "Ship", path3Desc: "作品集 · 协作与开源 · 把喜欢变成能力",
-      connectTitle: "Connect", connectDesc: "在网络的各个节点找到我。",
+      navProjects: "Projects", navSkills: "Skills", navLab: "Lab", navBlog: "Notes", navConnect: "Connect",
+      heroBadge: "STATUS // ONLINE",
+      heroSub: "08 · 本科在读 · Based in Guangzhou",
+      role1: "Quant / Trading", role2: "AI Creator", role3: "Media",
+      btnTerminal: "终端",
+      aboutTitle: "About",
+      aboutLead: "08 年出生，本科在读。在交易、量化、AI 与内容之间切换。",
+      aboutP1: "Based in Guangzhou。日常盯盘、写逻辑、用 AI 做实验，也做自媒体——把看到的市场、工具和想法公开说清楚。",
+      aboutP2: "不急着贴单一标签。更在意持续输出、持续验证、把认知变成能跑的东西。",
+      projectsTitle: "Projects", projectsDesc: "在做的，和准备做的。",
+      proj1Desc: "购机配置 CLI。按场景与预算生成建议，把信息差压小一点。",
+      proj2Desc: "交易与量化相关的小实验：数据、规则、回测思路与风控记录。",
+      proj3Desc: "AI 辅助创作与自媒体工具链。把输出效率和技术栈绑在一起。",
+      skillsTitle: "Skills", skillsDesc: "还在加练的信号强度。",
+      labTitle: "Lab", labDesc: "交易之外的频率。",
+      labQuant: "Quant Desk", labQuantDesc: "规则、数据与回撤。先活下来再谈收益。",
+      labAI: "AI Creation", labAIDesc: "生成、辅助、工作流。模型是工具。",
+      labMedia: "Self-Media", labMediaDesc: "把市场与工具讲清楚。公开记录。",
+      labMusic: "Sound", labMusicDesc: "电子向与氛围。节奏是另一种系统。",
+      labExp: "Experiments", labExpDesc: "代码 × 内容 × 交易想法的交叉试验。",
+      blogTitle: "Notes", blogDesc: "公开写的东西，主要在 X。",
+      blog1Title: "@MIA03ther", blog1Desc: "市场、工具、认知与日常输出。主阵地。",
+      blog2Title: "Long-form loading…", blog2Desc: "更长的笔记会慢慢补在这里或外链。",
+      pathTitle: "Path",
+      path1Title: "Build", path1Desc: "本科在读 · 交易与量化练习 · AI 与内容输出 · 公开记录",
+      path2Title: "Ship", path2Desc: "可复用的小工具与策略笔记 · 更稳定的内容节奏 · 作品集",
+      path3Title: "Scale", path3Desc: "把喜欢的方向做成可持续的能力与影响",
+      connectTitle: "Connect", connectDesc: "主页之外的节点。",
     },
     en: {
-      navProjects: "Projects", navSkills: "Skills", navLab: "Lab", navBlog: "Blog", navConnect: "Connect",
-      heroBadge: "STATUS // ONLINE", heroSub: "Builder / Creator · Based in Guangzhou",
-      btnTerminal: "Open Terminal", btnProjects: "Projects",
-      aboutTitle: "About", aboutLead: "I build things at the edge of data, intelligence and imagination.",
-      aboutP1: "Based in Guangzhou (GDUFS). I switch between code, data and sound. I like using tech on things that actually excite me — analysis, small tools, electronic music, anime worlds.",
-      aboutP2: "No rush to wear a single label. What matters is shipping, logging, and turning imagination into something that runs.",
-      projectsTitle: "Projects", projectsDesc: "Things I ship and things I’m building toward.",
-      proj1Desc: "CLI tool for student PC builds. Scene + budget + device type → config advice.",
-      proj2Desc: "Small experiments on data and decisions. Make the abstract concrete.",
-      proj3Desc: "AI-assisted creation and cross-border tools. Tech is only part of the material.",
-      skillsTitle: "Skills", skillsDesc: "Current signal strength — still leveling up.",
-      labTitle: "Lab", labDesc: "Side signals. Where code meets other frequencies.",
-      labMusic: "Electronic Music", labMusicDesc: "EDM / electronic. Lab for rhythm and atmosphere.",
-      labAnime: "Anime & Manga", labAnimeDesc: "Narrative and visuals. Worldbuilding as system design.",
-      labAI: "AI Playground", labAIDesc: "Generation and collaboration. Models are tools, not magic.",
-      labData: "Data Sketches", labDataDesc: "Small data, small charts, small conclusions.",
-      labExp: "Experiments", labExpDesc: "Cross-border tries: code × sound × image.",
-      musicLabel: "// NOW LISTENING", musicTitle: "NetEase Cloud Music", musicDesc: "Playlists and daily loops · hear what I’m on", musicBtn: "Open Profile →",
-      blogTitle: "Blog", blogDesc: "Notes, logs and short writes. Coming online.",
-      blog1Title: "Building in public — first commit", blog1Desc: "Site launch and a few thoughts. More posts here or linked out.",
-      blog2Title: "More posts loading…", blog2Desc: "Tech notes · learning logs · cyber fragments",
-      pathTitle: "Path", path1Title: "Boot", path1Desc: "Start school · foundations · small tools · public logs",
-      path2Title: "Explore", path2Desc: "Data & AI projects · real scenarios · ship work",
-      path3Title: "Ship", path3Desc: "Portfolio · collab & OSS · turn liking into capability",
-      connectTitle: "Connect", connectDesc: "Find me across the network.",
+      navProjects: "Projects", navSkills: "Skills", navLab: "Lab", navBlog: "Notes", navConnect: "Connect",
+      heroBadge: "STATUS // ONLINE",
+      heroSub: "08 · Undergrad · Based in Guangzhou",
+      role1: "Quant / Trading", role2: "AI Creator", role3: "Media",
+      btnTerminal: "Terminal",
+      aboutTitle: "About",
+      aboutLead: "Born 2008. Undergrad. Switching between trading, quant, AI and content.",
+      aboutP1: "Based in Guangzhou. Markets, logic, AI experiments, and self-media — making tools and ideas public.",
+      aboutP2: "No rush for a single label. Ship, verify, turn cognition into something that runs.",
+      projectsTitle: "Projects", projectsDesc: "What ships and what is building.",
+      proj1Desc: "PC build CLI. Scene + budget → config advice.",
+      proj2Desc: "Quant / market experiments: data, rules, backtest notes, risk logs.",
+      proj3Desc: "AI-assisted creation and media workflows.",
+      skillsTitle: "Skills", skillsDesc: "Signal strength — still leveling.",
+      labTitle: "Lab", labDesc: "Frequencies beyond the desk.",
+      labQuant: "Quant Desk", labQuantDesc: "Rules, data, drawdown. Survive first.",
+      labAI: "AI Creation", labAIDesc: "Generation and workflows. Models are tools.",
+      labMedia: "Self-Media", labMediaDesc: "Explain markets and tools in public.",
+      labMusic: "Sound", labMusicDesc: "Electronic / atmosphere. Rhythm as system.",
+      labExp: "Experiments", labExpDesc: "Code × content × trading ideas.",
+      blogTitle: "Notes", blogDesc: "Public writing — mainly on X.",
+      blog1Title: "@MIA03ther", blog1Desc: "Markets, tools, cognition. Main channel.",
+      blog2Title: "Long-form loading…", blog2Desc: "Longer notes will land here or via links.",
+      pathTitle: "Path",
+      path1Title: "Build", path1Desc: "Undergrad · quant practice · AI & media · public logs",
+      path2Title: "Ship", path2Desc: "Reusable tools & notes · steadier output · portfolio",
+      path3Title: "Scale", path3Desc: "Turn interest into durable capability",
+      connectTitle: "Connect", connectDesc: "Nodes beyond this page.",
     },
   };
 
@@ -80,14 +84,11 @@
     localStorage.setItem("mia-lang", lang);
   }
 
-  const savedLang = localStorage.getItem("mia-lang") || "zh";
-  applyLang(savedLang);
-
+  applyLang(localStorage.getItem("mia-lang") || "zh");
   $("#langToggle")?.addEventListener("click", () => {
     applyLang(root.getAttribute("data-lang") === "zh" ? "en" : "zh");
   });
 
-  /* ---------- Theme ---------- */
   const savedTheme = localStorage.getItem("mia-theme");
   const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
   root.setAttribute("data-theme", savedTheme || (prefersLight ? "light" : "dark"));
@@ -99,7 +100,6 @@
   }
   $("#themeToggle")?.addEventListener("click", toggleTheme);
 
-  /* ---------- Scroll progress + header ---------- */
   const progress = $("#scrollProgress");
   const header = $(".site-header");
   function onScroll() {
@@ -112,7 +112,6 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---------- Mobile nav ---------- */
   const navBtn = $(".nav-toggle");
   const navLinks = $(".nav-links");
   navBtn?.addEventListener("click", () => {
@@ -126,17 +125,10 @@
     });
   });
 
-  /* ---------- Logo menu ---------- */
   const logoMenu = $("#logoMenu");
-  $("#logoBtn")?.addEventListener("click", () => {
-    logoMenu.hidden = false;
-  });
-  $("#logoMenuClose")?.addEventListener("click", () => {
-    logoMenu.hidden = true;
-  });
-  logoMenu?.addEventListener("click", (e) => {
-    if (e.target === logoMenu) logoMenu.hidden = true;
-  });
+  $("#logoBtn")?.addEventListener("click", () => { logoMenu.hidden = false; });
+  $("#logoMenuClose")?.addEventListener("click", () => { logoMenu.hidden = true; });
+  logoMenu?.addEventListener("click", (e) => { if (e.target === logoMenu) logoMenu.hidden = true; });
   $$(".logo-menu-item[data-action]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const act = btn.getAttribute("data-action");
@@ -147,11 +139,9 @@
     });
   });
 
-  /* ---------- Terminal ---------- */
   const termOverlay = $("#terminalOverlay");
   const termBody = $("#terminalBody");
   const termInput = $("#terminalInput");
-
   const termHelp = `commands: help · whoami · about · skills · links · clear · exit`;
 
   function termPrint(html) {
@@ -165,14 +155,16 @@
   function openTerminal() {
     termOverlay.hidden = false;
     termBody.innerHTML = "";
-    termPrint(`<span class="t-muted">MIA_Ether shell v0.4 — type <span class="t-cyan">help</span></span>`);
+    termPrint(`<span class="t-muted">MIA_Ether shell — type <span class="t-cyan">help</span></span>`);
     termPrint(`<span class="t-green">mia@ether</span>:<span class="t-cyan">~</span>$ whoami`);
-    termPrint(`MIA_Ether — builder / creator. Data · AI · Sound · Code. Guangzhou.`);
+    termPrint(`MIA_Ether · 08 · undergrad · Guangzhou · quant / AI / media`);
     setTimeout(() => termInput?.focus(), 50);
   }
 
-  function closeTerminal() {
-    termOverlay.hidden = true;
+  function closeTerminal() { termOverlay.hidden = true; }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
 
   function runCommand(raw) {
@@ -180,40 +172,28 @@
     termPrint(`<span class="t-green">mia@ether</span>:<span class="t-cyan">~</span>$ ${escapeHtml(raw)}`);
     if (!cmd) return;
     if (cmd === "help") termPrint(`<span class="t-muted">${termHelp}</span>`);
-    else if (cmd === "whoami") termPrint(`MIA_Ether · Builder / Creator · Guangzhou (GDUFS)`);
+    else if (cmd === "whoami") termPrint(`MIA_Ether · born 2008 · undergrad · based in Guangzhou`);
     else if (cmd === "about") {
-      termPrint(`Exploring data, AI, finance-curious tools and creative tech.`);
-      termPrint(`Also: electronic music, anime/manga, random experiments.`);
-    } else if (cmd === "skills") termPrint(`Python · Data · AI tools · CLI · Creative / Sound — still leveling.`);
+      termPrint(`Trading · quant experiments · AI creation · self-media.`);
+      termPrint(`Public notes on X: @MIA03ther`);
+    } else if (cmd === "skills") termPrint(`Python · data · quant/trading · AI tools · content`);
     else if (cmd === "links") {
-      termPrint(`GitHub  https://github.com/MIA-Ether`);
       termPrint(`X       https://x.com/MIA03ther`);
-      termPrint(`Bili    https://space.bilibili.com/451863946`);
-      termPrint(`Music   https://music.163.com/#/user/home?id=13872715631`);
+      termPrint(`GitHub  https://github.com/MIA-Ether`);
     } else if (cmd === "clear") termBody.innerHTML = "";
     else if (cmd === "exit" || cmd === "q") closeTerminal();
-    else termPrint(`<span class="t-pink">command not found:</span> ${escapeHtml(cmd)} — try help`);
-  }
-
-  function escapeHtml(s) {
-    return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    else termPrint(`<span class="t-pink">unknown:</span> ${escapeHtml(cmd)} — try help`);
   }
 
   $("#termBtn")?.addEventListener("click", openTerminal);
   $("#openTermHero")?.addEventListener("click", openTerminal);
   $("#terminalClose")?.addEventListener("click", closeTerminal);
-  termOverlay?.addEventListener("click", (e) => {
-    if (e.target === termOverlay) closeTerminal();
-  });
+  termOverlay?.addEventListener("click", (e) => { if (e.target === termOverlay) closeTerminal(); });
   termInput?.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      runCommand(termInput.value);
-      termInput.value = "";
-    }
+    if (e.key === "Enter") { runCommand(termInput.value); termInput.value = ""; }
     if (e.key === "Escape") closeTerminal();
   });
 
-  /* ---------- Project filters ---------- */
   const filterBar = $("#filterBar");
   filterBar?.addEventListener("click", (e) => {
     const btn = e.target.closest(".filter-btn");
@@ -223,43 +203,30 @@
     const f = btn.getAttribute("data-filter");
     $$(".project-card").forEach((card) => {
       const tags = (card.getAttribute("data-tags") || "").split(/\s+/);
-      const show = f === "all" || tags.includes(f);
-      card.classList.toggle("hidden", !show);
+      card.classList.toggle("hidden", !(f === "all" || tags.includes(f)));
     });
   });
 
-  /* ---------- Skill bars animate on view ---------- */
-  const skillObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) {
-          $$(".skill-fill").forEach((el) => {
-            const p = el.getAttribute("data-p") || "0";
-            el.style.setProperty("--w", p + "%");
-            el.classList.add("animated");
-          });
-          skillObserver.disconnect();
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (en.isIntersecting) {
+        $$(".skill-fill").forEach((el) => {
+          el.style.setProperty("--w", (el.getAttribute("data-p") || "0") + "%");
+          el.classList.add("animated");
+        });
+        skillObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
   const skillsSec = $("#skills");
   if (skillsSec) skillObserver.observe(skillsSec);
 
-  /* ---------- Reveal ---------- */
-  const revealObs = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("visible");
-          revealObs.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.08, rootMargin: "0px 0px -24px 0px" }
-  );
-  $$(".project-card, .lab-card, .timeline-item, .contact-card, .blog-item, .music-card").forEach((el) => {
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add("visible"); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: "0px 0px -24px 0px" });
+  $$(".project-card, .lab-card, .timeline-item, .contact-card, .blog-item").forEach((el) => {
     el.style.opacity = "0";
     el.style.transform = "translateY(12px)";
     el.style.transition = "opacity 0.45s cubic-bezier(0.16,1,0.3,1), transform 0.45s cubic-bezier(0.16,1,0.3,1)";
@@ -269,7 +236,6 @@
   style.textContent = `.visible{opacity:1!important;transform:none!important}`;
   document.head.appendChild(style);
 
-  /* ---------- Custom cursor (desktop only) ---------- */
   const isTouch = matchMedia("(hover: none), (pointer: coarse)").matches;
   if (!isTouch) {
     document.body.classList.add("has-custom-cursor");
@@ -278,28 +244,19 @@
     let x = 0, y = 0, rx = 0, ry = 0;
     document.addEventListener("mousemove", (e) => {
       x = e.clientX; y = e.clientY;
-      if (dot) {
-        dot.style.left = x + "px";
-        dot.style.top = y + "px";
-      }
+      if (dot) { dot.style.left = x + "px"; dot.style.top = y + "px"; }
     });
-    function loopRing() {
-      rx += (x - rx) * 0.18;
-      ry += (y - ry) * 0.18;
-      if (ring) {
-        ring.style.left = rx + "px";
-        ring.style.top = ry + "px";
-      }
-      requestAnimationFrame(loopRing);
-    }
-    loopRing();
+    (function loop() {
+      rx += (x - rx) * 0.18; ry += (y - ry) * 0.18;
+      if (ring) { ring.style.left = rx + "px"; ring.style.top = ry + "px"; }
+      requestAnimationFrame(loop);
+    })();
     $$("a, button, .project-card, .lab-card, .contact-card, .filter-btn").forEach((el) => {
       el.addEventListener("mouseenter", () => ring?.classList.add("hover"));
       el.addEventListener("mouseleave", () => ring?.classList.remove("hover"));
     });
   }
 
-  /* ---------- Particles ---------- */
   const canvas = $("#particles");
   if (canvas && !isTouch && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const ctx = canvas.getContext("2d");
@@ -307,15 +264,10 @@
     function resize() {
       w = canvas.width = window.innerWidth;
       h = canvas.height = window.innerHeight;
-    }
-    function init() {
-      resize();
       particles = Array.from({ length: Math.min(48, Math.floor(w / 30)) }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
+        x: Math.random() * w, y: Math.random() * h,
         r: Math.random() * 1.4 + 0.4,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
+        vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
       }));
     }
     function draw() {
@@ -327,29 +279,19 @@
         if (p.x < 0 || p.x > w) p.vx *= -1;
         if (p.y < 0 || p.y > h) p.vy *= -1;
         ctx.globalAlpha = 0.35;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
       });
-      ctx.globalAlpha = 0.08;
-      ctx.strokeStyle = accent;
+      ctx.globalAlpha = 0.08; ctx.strokeStyle = accent;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const a = particles[i], b = particles[j];
-          const dx = a.x - b.x, dy = a.y - b.y;
-          const d = Math.hypot(dx, dy);
-          if (d < 120) {
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-          }
+          const d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < 120) { ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
         }
       }
       requestAnimationFrame(draw);
     }
-    init();
-    draw();
-    window.addEventListener("resize", init);
+    resize(); draw();
+    window.addEventListener("resize", resize);
   }
 })();
