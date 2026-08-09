@@ -1,176 +1,64 @@
-/** MIA_Ether — personal site interactions */
 (() => {
   "use strict";
-
   const root = document.documentElement;
-  const $ = (selector, scope = document) => scope.querySelector(selector);
-  const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+  const $ = (s, scope = document) => scope.querySelector(s);
+  const $$ = (s, scope = document) => [...scope.querySelectorAll(s)];
 
-  const copy = {
+  const text = {
     zh: {
-      navProjects: "Projects", navSkills: "Stack", navNow: "Now", navLab: "Lab", navBlog: "Notes", navConnect: "Connect",
-      heroBadge: "STATUS // ONLINE", heroSub: "08 · Builder in progress · Based in Guangzhou",
-      role1: "AI Explorer", role2: "Builder", role3: "Public Learner", btnTerminal: "终端",
-      aboutTitle: "About", aboutLead: "08 年出生，刚毕业。在 AI、工具、市场与内容之间持续试错。",
-      aboutP1: "Based in Guangzhou。会写一点代码、做一点 AI 实验、关注市场，也把看到的工具和想法公开记录下来。",
-      aboutP2: "还在路上，但会持续构建、持续学习，把好奇心变成真正能跑起来的东西。",
-      projectsTitle: "Projects", projectsDesc: "做过的，正在做的，以及下一件想做出来的事。",
-      proj1Desc: "购机配置 CLI。按场景与预算生成建议，把信息差压小一点。",
-      proj2Desc: "交易与量化相关的小实验：数据、规则、回测思路与风控记录。",
-      proj3Desc: "AI 辅助创作与自媒体工具链。把输出效率和技术栈绑在一起。",
-      nowTitle: "Now", nowDesc: "现在正在好奇、学习和构建的东西。", nowUpdated: "UPDATED · AUG 2026",
-      nowAI: "AI & Tools", nowAIDesc: "探索 AI 工具、工作流和真正有用的小产品。",
-      nowMarkets: "Markets", nowMarketsDesc: "观察市场、规则、叙事与风险如何一起变化。",
-      nowPublic: "Build in Public", nowPublicDesc: "把项目进度、思考和发现发在 X 上。",
-      skillsTitle: "Stack & Signals", skillsDesc: "正在积累的工具、方向和信号。",
-      labTitle: "Lab", labDesc: "交易之外的频率。", labQuant: "Quant Desk", labQuantDesc: "规则、数据与回撤。先活下来再谈收益。",
-      labAI: "AI Creation", labAIDesc: "生成、辅助、工作流。模型是工具。", labMedia: "Self-Media", labMediaDesc: "把市场与工具讲清楚。公开记录。",
-      labMusic: "Sound", labMusicDesc: "电子向与氛围。节奏是另一种系统。", labExp: "Experiments", labExpDesc: "代码 × 内容 × 交易想法的交叉试验。",
-      blogTitle: "Notes", blogDesc: "公开写的东西，主要在 X。", blog1Title: "@MIA03ther", blog1Desc: "市场、工具、认知与日常输出。主阵地。",
-      blog2Title: "Long-form loading…", blog2Desc: "更长的笔记会慢慢补在这里或外链。",
-      pathTitle: "Path", path1Title: "Build", path1Desc: "刚毕业 · AI 与工具探索 · 公开记录", path2Title: "Ship", path2Desc: "可复用的小工具、更多作品和更稳定的内容节奏", path3Title: "Scale", path3Desc: "把好奇心做成持续生长的能力与影响",
-      connectTitle: "Connect", connectDesc: "主页之外的节点。", friendsTitle: "在互联网上认真做东西的朋友。", friendsDesc: "想交换友链？欢迎在 X 上找我。",
+      navWork: "作品", navSignals: "信号", navAbout: "关于", navConnect: "连接",
+      status: "LIVE FROM GUANGZHOU · CN", heroCopy: "08 / BUILDER IN PROGRESS.<br>探索 AI、工具、市场与公开表达。", scroll: "向下探索",
+      aboutKicker: "故事刚开始", statement: "不是专家。<br><em>只是好奇心</em>太重。", aboutCopy: "我是 MIA_Ether，一个在广州的 08 后 Builder。写点代码，做点小东西，追逐有趣的系统，再把学到的东西公开记录。这里是我的成长存档。", meta: "学习 / 构建 / 分享",
+      workKicker: "精选作品", workTitle: "一边摸索，<br>一边做出来。", projectOne: "一个把预算和使用场景变成实用装机建议的 CLI。", projectTwo: "数据、规则、回测想法和风险笔记——都还在路上。", projectThree: "一个让创作更快、分享更好的个人 AI 工作流。", inProgress: "正在构建", ongoing: "持续实验",
+      signalKicker: "当前信号", signalTitle: "现在让我<br>着迷的东西。", signalOne: "AI 工具、创作工作流，以及真正有用的小产品。", signalTwo: "叙事、规则、风险和人的行为如何一起变化。", signalThree: "项目、想法和不完美的过程——都发在 X。",
+      xCopy: "X 上有最新版本的我：工具、市场、奇怪想法和构建日志。", xCta: "关注这段旅程 ↗", connectKicker: "开放频道", connectTitle: "一起把事情<br>做得<em>响亮。</em>", friendCopy: "想交换友情链接？欢迎来 X 找我。",
     },
     en: {
-      navProjects: "Projects", navSkills: "Stack", navNow: "Now", navLab: "Lab", navBlog: "Notes", navConnect: "Connect",
-      heroBadge: "STATUS // ONLINE", heroSub: "08 · Builder in progress · Based in Guangzhou",
-      role1: "AI Explorer", role2: "Builder", role3: "Public Learner", btnTerminal: "Terminal",
-      aboutTitle: "About", aboutLead: "Born 2008. Fresh out of high school. Learning through AI, tools, markets, and public work.",
-      aboutP1: "Based in Guangzhou. I write some code, run AI experiments, watch markets, and share useful tools and ideas in public.",
-      aboutP2: "Still early, still building. The goal is to turn curiosity into things that actually run.",
-      projectsTitle: "Projects", projectsDesc: "What I have made, what I am building, and what comes next.",
-      proj1Desc: "A PC-build CLI. Scenario and budget in; practical recommendations out.",
-      proj2Desc: "Small experiments in data, rules, backtesting ideas, and risk notes.",
-      proj3Desc: "AI-assisted creation and a personal media workflow.",
-      nowTitle: "Now", nowDesc: "What I am curious about, learning, and building right now.", nowUpdated: "UPDATED · AUG 2026",
-      nowAI: "AI & Tools", nowAIDesc: "Exploring AI tools, workflows, and small products that are genuinely useful.",
-      nowMarkets: "Markets", nowMarketsDesc: "Watching how markets, rules, narratives, and risk move together.",
-      nowPublic: "Build in Public", nowPublicDesc: "Sharing projects, thoughts, and discoveries on X.",
-      skillsTitle: "Stack & Signals", skillsDesc: "Tools, directions, and signals I am building up.",
-      labTitle: "Lab", labDesc: "Frequencies beyond the desk.", labQuant: "Quant Desk", labQuantDesc: "Rules, data, drawdown. Survive first.",
-      labAI: "AI Creation", labAIDesc: "Generation and workflows. Models are tools.", labMedia: "Self-Media", labMediaDesc: "Explain markets and tools in public.",
-      labMusic: "Sound", labMusicDesc: "Electronic / atmosphere. Rhythm as system.", labExp: "Experiments", labExpDesc: "Code × content × trading ideas.",
-      blogTitle: "Notes", blogDesc: "Public writing — mainly on X.", blog1Title: "@MIA03ther", blog1Desc: "Markets, tools, cognition, and daily output.",
-      blog2Title: "Long-form loading…", blog2Desc: "Longer notes will land here or via links.",
-      pathTitle: "Path", path1Title: "Build", path1Desc: "Fresh out of high school · AI and tools · public notes", path2Title: "Ship", path2Desc: "Reusable tools, more work, and a steadier publishing rhythm", path3Title: "Scale", path3Desc: "Turn curiosity into durable capability and impact",
-      connectTitle: "Connect", connectDesc: "Nodes beyond this page.", friendsTitle: "Friends building on the internet.", friendsDesc: "Want to exchange links? Reach out on X.",
+      navWork: "WORK", navSignals: "SIGNALS", navAbout: "ABOUT", navConnect: "CONNECT",
+      status: "LIVE FROM GUANGZHOU · CN", heroCopy: "08 / BUILDER IN PROGRESS.<br>Exploring AI, tools, markets and ideas in public.", scroll: "SCROLL TO EXPLORE",
+      aboutKicker: "THE START", statement: "Not an expert.<br><em>Just too curious</em> to stay still.", aboutCopy: "I am MIA_Ether, an 08-born builder based in Guangzhou. I make small things, chase interesting systems, and turn what I learn into public notes. This is the archive of the climb.", meta: "LEARN / BUILD / SHARE",
+      workKicker: "SELECTED WORK", workTitle: "Things I make<br>while figuring it out.", projectOne: "A CLI that turns budget and use case into practical PC-build recommendations.", projectTwo: "Data, rules, backtesting ideas, and risk notes — all in progress.", projectThree: "A personal workflow for creating faster and sharing better.", inProgress: "IN PROGRESS", ongoing: "ONGOING",
+      signalKicker: "CURRENT SIGNALS", signalTitle: "What has my<br>attention now.", signalOne: "AI tools, creative workflows, and tiny products with actual utility.", signalTwo: "How narratives, rules, risk, and human behavior move together.", signalThree: "Projects, ideas, and the messy parts — shared on X.",
+      xCopy: "The most current version of me lives on X: tools, markets, random thoughts, and build logs.", xCta: "FOLLOW THE JOURNEY ↗", connectKicker: "OPEN CHANNELS", connectTitle: "Let’s make<br>something <em>loud.</em>", friendCopy: "Want to exchange links? Come say hi on X.",
     },
   };
-
   const setLanguage = (lang) => {
-    const active = copy[lang] ? lang : "zh";
+    const active = text[lang] ? lang : "zh";
     root.lang = active === "zh" ? "zh-CN" : "en";
     root.dataset.lang = active;
-    $$('[data-i18n]').forEach((element) => {
-      const value = copy[active][element.dataset.i18n];
-      if (value) element.textContent = value;
-    });
-    const label = $("#langLabel");
-    if (label) label.textContent = active === "zh" ? "EN" : "中";
-    localStorage.setItem("mia-lang", active);
+    $$('[data-i18n]').forEach((el) => { if (text[active][el.dataset.i18n]) el.innerHTML = text[active][el.dataset.i18n]; });
+    $("#lang").textContent = active === "zh" ? "EN" : "中";
+    localStorage.setItem("mia-language", active);
   };
+  setLanguage(localStorage.getItem("mia-language") || "zh");
+  $("#lang").addEventListener("click", () => setLanguage(root.dataset.lang === "zh" ? "en" : "zh"));
+  root.dataset.theme = localStorage.getItem("mia-theme") || "dark";
+  $("#theme").addEventListener("click", () => { root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark"; localStorage.setItem("mia-theme", root.dataset.theme); });
 
-  const setTheme = (theme) => {
-    root.dataset.theme = theme;
-    localStorage.setItem("mia-theme", theme);
-  };
+  const nav = $("#nav"), menu = $("#menu");
+  menu.addEventListener("click", () => { const open = nav.classList.toggle("open"); menu.setAttribute("aria-expanded", String(open)); });
+  $$("a", nav).forEach((link) => link.addEventListener("click", () => nav.classList.remove("open")));
+  const progress = $("#progress"), header = $("#topbar");
+  const onScroll = () => { const max = document.documentElement.scrollHeight - innerHeight; progress.style.width = `${max > 0 ? scrollY / max * 100 : 0}%`; header.classList.toggle("scrolled", scrollY > 30); };
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  $("#top").addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
 
-  setLanguage(localStorage.getItem("mia-lang") || "zh");
-  setTheme(localStorage.getItem("mia-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"));
-  $("#langToggle")?.addEventListener("click", () => setLanguage(root.dataset.lang === "zh" ? "en" : "zh"));
-  $("#themeToggle")?.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
+  const reveal = new IntersectionObserver((entries, observer) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); } }), { threshold: .12 });
+  $$(".reveal").forEach((el) => reveal.observe(el));
+  $$(".hero .reveal").forEach((el, i) => setTimeout(() => el.classList.add("visible"), 240 + i * 130));
 
-  const navLinks = $(".nav-links");
-  const navButton = $(".nav-toggle");
-  navButton?.addEventListener("click", () => {
-    const open = navLinks?.classList.toggle("open");
-    navButton.setAttribute("aria-expanded", String(Boolean(open)));
-  });
-  $$("a", navLinks).forEach((link) => link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    navButton?.setAttribute("aria-expanded", "false");
-  }));
+  if (!matchMedia("(hover: none), (pointer: coarse)").matches) {
+    const cursor = $("#cursor");
+    addEventListener("pointermove", (event) => { cursor.style.left = `${event.clientX}px`; cursor.style.top = `${event.clientY}px`; });
+    $$("a, button, .work-card, .signal").forEach((el) => { el.addEventListener("mouseenter", () => cursor.classList.add("hot")); el.addEventListener("mouseleave", () => cursor.classList.remove("hot")); });
+  }
 
-  const header = $(".site-header");
-  const progress = $("#scrollProgress");
-  const updateScroll = () => {
-    const max = document.documentElement.scrollHeight - innerHeight;
-    if (progress) progress.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
-    header?.classList.toggle("scrolled", scrollY > 12);
-  };
-  addEventListener("scroll", updateScroll, { passive: true });
-  updateScroll();
-
-  const filterBar = $("#filterBar");
-  filterBar?.addEventListener("click", (event) => {
-    const button = event.target.closest(".filter-btn");
-    if (!button) return;
-    $$(".filter-btn", filterBar).forEach((item) => item.classList.toggle("active", item === button));
-    const filter = button.dataset.filter;
-    $$(".project-card").forEach((card) => card.classList.toggle("hidden", filter !== "all" && !card.dataset.tags.split(/\s+/).includes(filter)));
-  });
-
-  const reveal = new IntersectionObserver((entries, observer) => entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("visible");
-    observer.unobserve(entry.target);
-  }), { threshold: 0.08, rootMargin: "0px 0px -24px" });
-  $$(".project-card, .now-card, .lab-card, .timeline-item, .contact-card, .friend-card, .blog-item").forEach((item) => reveal.observe(item));
-
-  const skills = $("#skills");
-  const skillObserver = new IntersectionObserver((entries, observer) => entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    $$(".skill-fill").forEach((fill) => fill.style.setProperty("--w", `${fill.dataset.p || 0}%`));
-    observer.disconnect();
-  }), { threshold: 0.2 });
-  if (skills) skillObserver.observe(skills);
-
-  const logoMenu = $("#logoMenu");
-  const terminal = $("#terminalOverlay");
-  const terminalBody = $("#terminalBody");
-  const terminalInput = $("#terminalInput");
-  const escape = (text) => text.replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
-  const print = (html) => { const line = document.createElement("div"); line.className = "terminal-line"; line.innerHTML = html; terminalBody.append(line); terminalBody.scrollTop = terminalBody.scrollHeight; };
-  const closeTerminal = () => { terminal.hidden = true; };
-  const openTerminal = () => {
-    terminal.hidden = false;
-    terminalBody.innerHTML = "";
-    print('<span class="t-muted">MIA_Ether shell — type <span class="t-cyan">help</span></span>');
-    print('<span class="t-green">mia@ether</span>:<span class="t-cyan">~</span>$ whoami');
-    print("MIA_Ether · 08 · builder in progress · Guangzhou · AI / tools / ideas");
-    setTimeout(() => terminalInput?.focus(), 20);
-  };
-  const run = (raw) => {
-    const command = raw.trim().toLowerCase();
-    print(`<span class="t-green">mia@ether</span>:<span class="t-cyan">~</span>$ ${escape(raw)}`);
-    if (!command) return;
-    const output = {
-      help: '<span class="t-muted">commands: help · whoami · about · skills · links · clear · exit</span>',
-      whoami: "MIA_Ether · born 2008 · builder in progress · based in Guangzhou",
-      about: "AI tools · market curiosity · public building · creative experiments.",
-      skills: "Python · data · AI tools · markets · content · sound",
-      links: "X       https://x.com/MIA03ther<br>GitHub  https://github.com/MIA-Ether",
-    };
-    if (command === "clear") { terminalBody.innerHTML = ""; return; }
-    if (command === "exit" || command === "q") { closeTerminal(); return; }
-    print(output[command] || `<span class="t-pink">unknown:</span> ${escape(command)} — try help`);
-  };
-  $("#termBtn")?.addEventListener("click", openTerminal);
-  $("#openTermHero")?.addEventListener("click", openTerminal);
-  $("#terminalClose")?.addEventListener("click", closeTerminal);
-  terminal?.addEventListener("click", (event) => { if (event.target === terminal) closeTerminal(); });
-  terminalInput?.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") { run(terminalInput.value); terminalInput.value = ""; }
-    if (event.key === "Escape") closeTerminal();
-  });
-
-  $("#logoBtn")?.addEventListener("click", () => { logoMenu.hidden = false; });
-  $("#logoMenuClose")?.addEventListener("click", () => { logoMenu.hidden = true; });
-  logoMenu?.addEventListener("click", (event) => { if (event.target === logoMenu) logoMenu.hidden = true; });
-  $$(".logo-menu-item[data-action]").forEach((button) => button.addEventListener("click", () => {
-    logoMenu.hidden = true;
-    if (button.dataset.action === "terminal") openTerminal();
-    if (button.dataset.action === "theme") setTheme(root.dataset.theme === "dark" ? "light" : "dark");
-    if (button.dataset.action === "lang") setLanguage(root.dataset.lang === "zh" ? "en" : "zh");
-  }));
+  const canvas = $("#universe");
+  if (canvas && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const ctx = canvas.getContext("2d"); let width, height, dots = [], pointer = { x: -1000, y: -1000 };
+    const resize = () => { width = canvas.width = innerWidth * devicePixelRatio; height = canvas.height = innerHeight * devicePixelRatio; canvas.style.width = `${innerWidth}px`; canvas.style.height = `${innerHeight}px`; ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0); dots = Array.from({ length: Math.min(105, Math.floor(innerWidth / 12)) }, () => ({ x: Math.random() * innerWidth, y: Math.random() * innerHeight, vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25, r: Math.random() * 1.6 + .3 })); };
+    addEventListener("resize", resize); addEventListener("pointermove", (event) => { pointer.x = event.clientX; pointer.y = event.clientY; }); resize();
+    const draw = () => { ctx.clearRect(0, 0, innerWidth, innerHeight); dots.forEach((dot, i) => { dot.x += dot.vx; dot.y += dot.vy; if (dot.x < 0 || dot.x > innerWidth) dot.vx *= -1; if (dot.y < 0 || dot.y > innerHeight) dot.vy *= -1; const pd = Math.hypot(dot.x - pointer.x, dot.y - pointer.y); if (pd < 150) { dot.x += (dot.x - pointer.x) * .006; dot.y += (dot.y - pointer.y) * .006; } ctx.fillStyle = i % 7 === 0 ? "#ff6eac" : "#84ffcb"; ctx.globalAlpha = .62; ctx.beginPath(); ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2); ctx.fill(); for (let j = i + 1; j < dots.length; j++) { const other = dots[j], d = Math.hypot(dot.x - other.x, dot.y - other.y); if (d < 118) { ctx.strokeStyle = i % 8 === 0 ? "#ff6eac" : "#84ffcb"; ctx.globalAlpha = .12 * (1 - d / 118); ctx.beginPath(); ctx.moveTo(dot.x, dot.y); ctx.lineTo(other.x, other.y); ctx.stroke(); } } }); ctx.globalAlpha = 1; requestAnimationFrame(draw); };
+    draw();
+  }
 })();
