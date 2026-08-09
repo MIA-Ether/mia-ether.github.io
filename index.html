@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070d" />
+  <title>MIA_Ether — AI · Tools · Ideas</title>
+  <meta name="description" content="MIA_Ether · 08 · Builder in progress. Exploring AI, tools, markets, sound, and ideas in public." />
+  <link rel="canonical" href="https://mia-ether.github.io/" />
+  <meta property="og:title" content="MIA_Ether — AI · Tools · Ideas" />
+  <meta property="og:description" content="A young builder exploring AI, tools, markets, sound, and ideas in public." />
+  <meta property="og:site_name" content="MIA_Ether" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@MIA03ther" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#home" aria-label="MIA Ether home"><i>M</i><span>MIA_Ether</span></a>
+    <nav id="nav" aria-label="Primary navigation">
+      <a href="#work" data-i18n="navWork">WORK</a>
+      <a href="#signals" data-i18n="navSignals">SIGNALS</a>
+      <a href="#about" data-i18n="navAbout">ABOUT</a>
+      <a href="#connect" data-i18n="navConnect">CONNECT</a>
+    </nav>
+    <div class="actions">
+      <button class="mini-btn" id="lang" aria-label="切换到英文" title="中 / EN · 点击切换语言">EN</button>
+      <button class="mini-btn theme" id="theme" aria-label="Switch theme"><span>◐</span></button>
+      <a class="follow" href="https://x.com/MIA03ther" target="_blank" rel="noopener">FOLLOW X <b>↗</b></a>
+      <button class="menu" id="menu" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <canvas id="universe" aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="scanlines" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-a" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-b" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="eyebrow reveal"><span class="live-dot"></span><span data-i18n="status">LIVE FROM GUANGZHOU · CN</span></div>
+        <h1 class="reveal"><span class="outline">MIA</span><span>ETHER<span class="spark">.</span></span></h1>
+        <div class="hero-bottom reveal">
+          <p data-i18n="heroCopy">08 / BUILDER IN PROGRESS.<br>Exploring AI, tools, markets and ideas in public.</p>
+          <div class="hero-cta"><a href="#work" class="round-link"><span>↓</span></a><small data-i18n="scroll">SCROLL TO EXPLORE</small></div>
+        </div>
+      </div>
+      <div class="hero-side"><span>AI / TOOLS / IDEAS</span><span>2026 © MIA_Ether</span></div>
+      <div class="hero-stamp"><span>BUILD<br>LOUD</span><i></i></div>
+    </section>
+
+    <section class="ticker" aria-label="Interests"><div>AI &nbsp;✦&nbsp; BUILD &nbsp;✦&nbsp; MARKETS &nbsp;✦&nbsp; SOUND &nbsp;✦&nbsp; IDEAS &nbsp;✦&nbsp; AI &nbsp;✦&nbsp; BUILD &nbsp;✦&nbsp; MARKETS &nbsp;✦&nbsp; SOUND &nbsp;✦&nbsp; IDEAS &nbsp;✦&nbsp;</div></section>
+
+    <section class="statement section" id="about">
+      <p class="section-no">01 / <span data-i18n="aboutKicker">THE START</span></p>
+      <div class="statement-copy reveal">
+        <p class="big" data-i18n="statement">Not an expert.<br><em>Just too curious</em> to stay still.</p>
+        <p class="body" data-i18n="aboutCopy">我是 MIA_Ether，一个 08 年出生、在广州生活的 Builder。写点代码，做点小东西，追逐有趣的系统，再把学到的东西公开记录。这里是我的成长存档。</p>
+      </div>
+      <div class="statement-meta reveal"><span>01</span><span data-i18n="meta">LEARN / BUILD / SHARE</span></div>
+    </section>
+
+    <section class="work section" id="work">
+      <div class="section-head"><p class="section-no">02 / <span data-i18n="workKicker">SELECTED WORK</span></p><h2 data-i18n="workTitle">Things I make<br>while figuring it out.</h2></div>
+      <div class="work-grid">
+        <a class="work-card featured reveal" href="https://github.com/MIA-Ether/pc-build-config-generator" target="_blank" rel="noopener">
+          <div class="card-art art-terminal"><span>&gt;_</span><code>budget → build<br>scene → config<br><b>ready.</b></code></div>
+          <div class="card-info"><span class="tag">01 / LIVE</span><h3>PC Build<br>Config Generator</h3><p data-i18n="projectOne">A CLI that turns budget and use case into practical PC-build recommendations.</p><strong>GITHUB ↗</strong></div>
+        </a>
+        <a class="work-card reveal" href="https://github.com/MIA-Ether/soullink-emotion-sdk" target="_blank" rel="noopener">
+          <div class="card-art art-ai"><span>✦</span><span>✦</span><span>✦</span></div>
+          <div class="card-info"><span class="tag">02 / SDK</span><h3>Soullink<br>Emotion SDK</h3><p data-i18n="projectTwo">A real-time emotion and performance SDK for AI characters and Live2D companions.</p><strong>GITHUB ↗</strong></div>
+        </a>
+        <a class="work-card reveal" href="https://github.com/MIA-Ether/MyTradingChatSummary" target="_blank" rel="noopener">
+          <div class="card-art art-market"><span class="chart"></span><b>LOCAL<br>AI</b></div>
+          <div class="card-info"><span class="tag">03 / AI</span><h3>Trading Chat<br>Summary</h3><p data-i18n="projectThree">A local Ollama assistant that turns exported WeChat groups into searchable reports and notes.</p><strong>GITHUB ↗</strong></div>
+        </a>
+        <a class="work-card reveal" href="https://github.com/MIA-Ether/WeChatDataAnalysis" target="_blank" rel="noopener">
+          <div class="card-art art-terminal"><span>WX</span><code>decrypt → data<br>chat → archive<br><b>insight.</b></code></div>
+          <div class="card-info"><span class="tag">04 / DATA</span><h3>WeChat Data<br>Analysis</h3><p data-i18n="projectFour">A WeChat data tool for decryption, analysis, annual summaries, and chat exports.</p><strong>GITHUB ↗</strong></div>
+        </a>
+        <a class="work-card reveal" href="https://github.com/MIA-Ether/delta-cache-cleaner" target="_blank" rel="noopener">
+          <div class="card-art art-market"><span class="chart"></span><b>CACHE<br>CLEANER</b></div>
+          <div class="card-info"><span class="tag">05 / TOOL</span><h3>Delta Cache<br>Cleaner</h3><p data-i18n="projectFive">A portable Windows script for clearing Delta Force, Unreal Engine, and NVIDIA caches.</p><strong>GITHUB ↗</strong></div>
+        </a>
+        <a class="work-card reveal" href="https://github.com/MIA-Ether/x-growth-skill" target="_blank" rel="noopener">
+          <div class="card-art art-ai"><span>↗</span><span>✦</span><span>↗</span></div>
+          <div class="card-info"><span class="tag">06 / SYSTEM</span><h3>Creator<br>Growth Skill</h3><p data-i18n="projectSix">A practical X growth skill for building in public with an authentic, repeatable rhythm.</p><strong>GITHUB ↗</strong></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="signals section" id="signals">
+      <div class="signal-bg" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="section-head reveal"><p class="section-no">03 / <span data-i18n="signalKicker">CURRENT SIGNALS</span></p><h2 data-i18n="signalTitle">What has my<br>attention now.</h2></div>
+      <div class="signal-list">
+        <article class="signal reveal"><span>01</span><div><h3>AI &amp; Tools</h3><p data-i18n="signalOne">AI tools, creative workflows, and tiny products with actual utility.</p></div><i>↗</i></article>
+        <article class="signal reveal"><span>02</span><div><h3>Markets</h3><p data-i18n="signalTwo">How narratives, rules, risk, and human behavior move together.</p></div><i>↗</i></article>
+        <article class="signal reveal"><span>03</span><div><h3>Build in Public</h3><p data-i18n="signalThree">Projects, ideas, and the messy parts — shared on X.</p></div><i>↗</i></article>
+      </div>
+    </section>
+
+    <section class="x-section section">
+      <div class="x-card reveal"><div class="x-top"><span class="x-mark">𝕏</span><span class="tag">@MIA03ther</span></div><p data-i18n="xCopy">The most current version of me lives on X: tools, markets, random thoughts, and build logs.</p><a href="https://x.com/MIA03ther" target="_blank" rel="noopener" data-i18n="xCta">FOLLOW THE JOURNEY ↗</a><div class="x-glow" aria-hidden="true"></div></div>
+    </section>
+
+    <section class="connect section" id="connect">
+      <p class="section-no">04 / <span data-i18n="connectKicker">OPEN CHANNELS</span></p>
+      <h2 class="reveal" data-i18n="connectTitle">Let’s make<br>something <em>loud.</em></h2>
+      <div class="connect-links reveal">
+        <a href="https://x.com/MIA03ther" target="_blank" rel="noopener"><span>X / TWITTER</span><b>@MIA03ther ↗</b></a>
+        <a href="https://github.com/MIA-Ether" target="_blank" rel="noopener"><span>GITHUB</span><b>MIA-Ether ↗</b></a>
+        <a href="mailto:mia03ther@gmail.com"><span>EMAIL</span><b>mia03ther@gmail.com ↗</b></a>
+      </div>
+      <div class="friends reveal"><div><span class="tag">FRIENDS / MUTUALS</span><p data-i18n="friendCopy">Want to exchange links? Come say hi on X.</p></div><div class="friend-links"><a href="https://mtcopilot.xyz" target="_blank" rel="noopener">Louis Good <span>mtcopilot.xyz ↗</span></a><a href="https://20090625.xyz/" target="_blank" rel="noopener">Ma Brock <span>20090625.xyz ↗</span></a></div></div>
+    </section>
+  </main>
+  <footer><span>MIA_Ether / 2026</span><span>AI · TOOLS · IDEAS</span><button id="top">BACK TO TOP ↑</button></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
