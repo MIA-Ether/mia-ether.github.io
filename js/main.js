@@ -10,20 +10,24 @@
 
   const dict = {
     zh: {
-      navProjects: "Projects", navSkills: "Skills", navLab: "Lab", navBlog: "Notes", navConnect: "Connect",
+      navProjects: "Projects", navSkills: "Stack", navNow: "Now", navLab: "Lab", navBlog: "Notes", navConnect: "Connect",
       heroBadge: "STATUS // ONLINE",
-      heroSub: "08 · 本科在读 · Based in Guangzhou",
-      role1: "Quant / Trading", role2: "AI Creator", role3: "Media",
+      heroSub: "08 · Builder in progress · Based in Guangzhou",
+      role1: "AI Explorer", role2: "Builder", role3: "Public Learner",
       btnTerminal: "终端",
       aboutTitle: "About",
-      aboutLead: "08 年出生，本科在读。在交易、量化、AI 与内容之间切换。",
-      aboutP1: "Based in Guangzhou。日常盯盘、写逻辑、用 AI 做实验，也做自媒体——把看到的市场、工具和想法公开说清楚。",
-      aboutP2: "不急着贴单一标签。更在意持续输出、持续验证、把认知变成能跑的东西。",
-      projectsTitle: "Projects", projectsDesc: "在做的，和准备做的。",
+      aboutLead: "08 年出生，刚毕业。在 AI、工具、市场与内容之间持续试错。",
+      aboutP1: "Based in Guangzhou。会写一点代码、做一点 AI 实验、关注市场，也把看到的工具和想法公开记录下来。",
+      aboutP2: "还在路上，但会持续构建、持续学习，把好奇心变成真正能跑起来的东西。",
+      projectsTitle: "Projects", projectsDesc: "做过的，正在做的，以及下一件想做出来的事。",
       proj1Desc: "购机配置 CLI。按场景与预算生成建议，把信息差压小一点。",
       proj2Desc: "交易与量化相关的小实验：数据、规则、回测思路与风控记录。",
       proj3Desc: "AI 辅助创作与自媒体工具链。把输出效率和技术栈绑在一起。",
-      skillsTitle: "Skills", skillsDesc: "还在加练的信号强度。",
+      nowTitle: "Now", nowDesc: "现在正在好奇、学习和构建的东西。", nowUpdated: "UPDATED · AUG 2026",
+      nowAI: "AI & Tools", nowAIDesc: "探索 AI 工具、工作流和真正有用的小产品。",
+      nowMarkets: "Markets", nowMarketsDesc: "观察市场、规则、叙事与风险如何一起变化。",
+      nowPublic: "Build in Public", nowPublicDesc: "把项目进度、思考和发现发在 X 上。",
+      skillsTitle: "Stack & Signals", skillsDesc: "正在积累的工具、方向和信号。",
       labTitle: "Lab", labDesc: "交易之外的频率。",
       labQuant: "Quant Desk", labQuantDesc: "规则、数据与回撤。先活下来再谈收益。",
       labAI: "AI Creation", labAIDesc: "生成、辅助、工作流。模型是工具。",
@@ -38,22 +42,27 @@
       path2Title: "Ship", path2Desc: "可复用的小工具与策略笔记 · 更稳定的内容节奏 · 作品集",
       path3Title: "Scale", path3Desc: "把喜欢的方向做成可持续的能力与影响",
       connectTitle: "Connect", connectDesc: "主页之外的节点。",
+      friendsTitle: "在互联网上认真做东西的朋友。", friendsDesc: "想交换友链？欢迎在 X 上找我。",
     },
     en: {
-      navProjects: "Projects", navSkills: "Skills", navLab: "Lab", navBlog: "Notes", navConnect: "Connect",
+      navProjects: "Projects", navSkills: "Stack", navNow: "Now", navLab: "Lab", navBlog: "Notes", navConnect: "Connect",
       heroBadge: "STATUS // ONLINE",
-      heroSub: "08 · Undergrad · Based in Guangzhou",
-      role1: "Quant / Trading", role2: "AI Creator", role3: "Media",
+      heroSub: "08 · Builder in progress · Based in Guangzhou",
+      role1: "AI Explorer", role2: "Builder", role3: "Public Learner",
       btnTerminal: "Terminal",
       aboutTitle: "About",
-      aboutLead: "Born 2008. Undergrad. Switching between trading, quant, AI and content.",
-      aboutP1: "Based in Guangzhou. Markets, logic, AI experiments, and self-media — making tools and ideas public.",
-      aboutP2: "No rush for a single label. Ship, verify, turn cognition into something that runs.",
-      projectsTitle: "Projects", projectsDesc: "What ships and what is building.",
+      aboutLead: "Born 2008. Fresh out of high school. Learning through AI, tools, markets, and public work.",
+      aboutP1: "Based in Guangzhou. I write some code, run AI experiments, watch markets, and share useful tools and ideas in public.",
+      aboutP2: "Still early, still building. The goal is to turn curiosity into things that actually run.",
+      projectsTitle: "Projects", projectsDesc: "What I have made, what I am building, and what comes next.",
       proj1Desc: "PC build CLI. Scene + budget → config advice.",
       proj2Desc: "Quant / market experiments: data, rules, backtest notes, risk logs.",
       proj3Desc: "AI-assisted creation and media workflows.",
-      skillsTitle: "Skills", skillsDesc: "Signal strength — still leveling.",
+      nowTitle: "Now", nowDesc: "What I am curious about, learning, and building right now.", nowUpdated: "UPDATED · AUG 2026",
+      nowAI: "AI & Tools", nowAIDesc: "Exploring AI tools, workflows, and small products that are genuinely useful.",
+      nowMarkets: "Markets", nowMarketsDesc: "Watching how markets, rules, narratives, and risk move together.",
+      nowPublic: "Build in Public", nowPublicDesc: "Sharing projects, thoughts, and discoveries on X.",
+      skillsTitle: "Stack & Signals", skillsDesc: "Tools, directions, and signals I am building up.",
       labTitle: "Lab", labDesc: "Frequencies beyond the desk.",
       labQuant: "Quant Desk", labQuantDesc: "Rules, data, drawdown. Survive first.",
       labAI: "AI Creation", labAIDesc: "Generation and workflows. Models are tools.",
@@ -68,6 +77,7 @@
       path2Title: "Ship", path2Desc: "Reusable tools & notes · steadier output · portfolio",
       path3Title: "Scale", path3Desc: "Turn interest into durable capability",
       connectTitle: "Connect", connectDesc: "Nodes beyond this page.",
+      friendsTitle: "Friends building on the internet.", friendsDesc: "Want to exchange links? Reach out on X.",
     },
   };
 
@@ -157,7 +167,7 @@
     termBody.innerHTML = "";
     termPrint(`<span class="t-muted">MIA_Ether shell — type <span class="t-cyan">help</span></span>`);
     termPrint(`<span class="t-green">mia@ether</span>:<span class="t-cyan">~</span>$ whoami`);
-    termPrint(`MIA_Ether · 08 · undergrad · Guangzhou · quant / AI / media`);
+    termPrint(`MIA_Ether · 08 · builder in progress · Guangzhou · AI / tools / ideas`);
     setTimeout(() => termInput?.focus(), 50);
   }
 
@@ -172,9 +182,9 @@
     termPrint(`<span class="t-green">mia@ether</span>:<span class="t-cyan">~</span>$ ${escapeHtml(raw)}`);
     if (!cmd) return;
     if (cmd === "help") termPrint(`<span class="t-muted">${termHelp}</span>`);
-    else if (cmd === "whoami") termPrint(`MIA_Ether · born 2008 · undergrad · based in Guangzhou`);
+    else if (cmd === "whoami") termPrint(`MIA_Ether · born 2008 · builder in progress · based in Guangzhou`);
     else if (cmd === "about") {
-      termPrint(`Trading · quant experiments · AI creation · self-media.`);
+      termPrint(`AI tools · market curiosity · public building · creative experiments.`);
       termPrint(`Public notes on X: @MIA03ther`);
     } else if (cmd === "skills") termPrint(`Python · data · quant/trading · AI tools · content`);
     else if (cmd === "links") {
@@ -226,7 +236,7 @@
       if (e.isIntersecting) { e.target.classList.add("visible"); revealObs.unobserve(e.target); }
     });
   }, { threshold: 0.08, rootMargin: "0px 0px -24px 0px" });
-  $$(".project-card, .lab-card, .timeline-item, .contact-card, .blog-item").forEach((el) => {
+  $$(".project-card, .now-card, .lab-card, .timeline-item, .contact-card, .friend-card, .blog-item").forEach((el) => {
     el.style.opacity = "0";
     el.style.transform = "translateY(12px)";
     el.style.transition = "opacity 0.45s cubic-bezier(0.16,1,0.3,1), transform 0.45s cubic-bezier(0.16,1,0.3,1)";
