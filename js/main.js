@@ -8,7 +8,7 @@
     zh: {
       navWork: "作品", navSignals: "信号", navAbout: "关于", navConnect: "连接",
       status: "LIVE FROM GUANGZHOU · CN", heroCopy: "08 / BUILDER IN PROGRESS.<br>探索 AI、工具、市场与公开表达。", scroll: "向下探索",
-      aboutKicker: "故事刚开始", statement: "不是专家。<br><em>只是好奇心</em>太重。", aboutCopy: "我是 MIA_Ether，一个在广州的 08 年 Builder。写点代码，做点小东西，追逐有趣的系统，再把学到的东西公开记录。这里是我的成长存档。", meta: "学习 / 构建 / 分享",
+      aboutKicker: "故事刚开始", statement: "不是专家。<br><em>只是好奇心</em>太重。", aboutCopy: "我是 MIA_Ether，一个 08 年出生、在广州生活的 Builder。写点代码，做点小东西，追逐有趣的系统，再把学到的东西公开记录。这里是我的成长存档。", meta: "学习 / 构建 / 分享",
       workKicker: "精选作品", workTitle: "一边摸索，<br>一边做出来。", projectOne: "把预算、专业和使用场景变成可执行购机建议的 CLI。", projectTwo: "面向 AI 角色和 Live2D 伙伴的实时情绪与表演 SDK。", projectThree: "用本地 Ollama 把微信群导出内容整理成可检索的复盘报告。", projectFour: "支持微信数据解密、分析、年度总结和聊天记录导出的工具。", projectFive: "一键清理《三角洲行动》、Unreal Engine 与 NVIDIA 缓存的便携脚本。", projectSix: "帮助创作者公开构建、保持真实表达并持续增长的 X Skill。", inProgress: "正在构建", ongoing: "持续实验",
       signalKicker: "当前信号", signalTitle: "现在让我<br>着迷的东西。", signalOne: "AI 工具、创作工作流，以及真正有用的小产品。", signalTwo: "叙事、规则、风险和人的行为如何一起变化。", signalThree: "项目、想法和不完美的过程——都发在 X。",
       xCopy: "X 上有最新版本的我：工具、市场、奇怪想法和构建日志。", xCta: "关注这段旅程 ↗", connectKicker: "开放频道", connectTitle: "一起把事情<br>做得<em>响亮。</em>", friendCopy: "想交换友情链接？欢迎来 X 找我。",
@@ -28,6 +28,7 @@
     root.dataset.lang = active;
     $$('[data-i18n]').forEach((el) => { if (text[active][el.dataset.i18n]) el.innerHTML = text[active][el.dataset.i18n]; });
     $("#lang").textContent = active === "zh" ? "EN" : "中";
+    $("#lang").setAttribute("aria-label", active === "zh" ? "切换到英文" : "Switch to Chinese");
     localStorage.setItem("mia-language", active);
   };
   setLanguage(localStorage.getItem("mia-language") || "zh");
