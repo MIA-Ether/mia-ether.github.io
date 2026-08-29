@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIA_Ether — AI · Quant · Agents</title>
+  <meta name="description" content="MIA_Ether — AI, quant finance, and agent engineering." />
+  <meta name="author" content="MIA_Ether" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mia-ether.github.io/" />
+  <meta property="og:title" content="MIA_Ether — AI · Quant · Agents" />
+  <meta property="og:description" content="Personal universe: AI, quant research, and agent engineering." />
+  <meta property="og:site_name" content="MIA_Ether" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MIA03ther" />
+  <meta name="twitter:creator" content="@MIA03ther" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <canvas id="stardust" aria-hidden="true"></canvas>
+
+  <a class="skip-link" href="#main">Skip</a>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="Primary">
+      <a class="logo" href="#" aria-label="MIA_Ether home">
+        <span class="logo-mark" aria-hidden="true">M</span>
+        <span class="logo-text">MIA_Ether</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-i18n="navAbout">About</a></li>
+        <li><a href="#building" data-i18n="navBuilding">Building</a></li>
+        <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+        <li><a href="#agentlab" data-i18n="navLab">Lab</a></li>
+        <li><a href="https://github.com/MIA-Ether" target="_blank" rel="noopener" class="nav-external" data-i18n="navGitHub">GitHub</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="icon-btn" id="langToggle" aria-label="Language" aria-haspopup="listbox" aria-expanded="false">
+          <span class="mono" id="langLabel">EN</span>
+        </button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Theme">
+          <span class="icon-sun" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </span>
+          <span class="icon-moon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+        </button>
+        <button class="icon-btn" id="termBtn" aria-label="Terminal" title="Terminal">
+          <span class="mono" style="font-size:0.72rem">&gt;_</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="lang-panel" id="langPanel" hidden>
+      <div class="lang-panel-inner">
+        <button class="lang-option" data-lang="en">English</button>
+        <button class="lang-option" data-lang="zh">简体中文</button>
+        <button class="lang-option" data-lang="ru">Русский</button>
+        <button class="lang-option" data-lang="it">Italiano</button>
+        <button class="lang-option" data-lang="es">Español</button>
+        <button class="lang-option" data-lang="ja">日本語</button>
+        <button class="lang-option" data-lang="pt">Português</button>
+        <button class="lang-option" data-lang="ko">한국어</button>
+        <button class="lang-option" data-lang="fr">Français</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="hero" aria-labelledby="heroTitle">
+      <div class="hero-mist" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-kicker mono" data-i18n="heroKicker">STATUS // ONLINE</div>
+        <h1 class="hero-title" id="heroTitle">MIA_Ether</h1>
+        <p class="hero-tagline mono" data-i18n="heroTagline">AI · Quant · Agents</p>
+        <p class="hero-sub" data-i18n="heroSub">Builder in progress · Based in Guangzhou</p>
+        <div class="hero-actions">
+          <a href="#building" class="btn btn-primary" data-i18n="heroCtaExplore">Explore</a>
+          <a href="#projects" class="btn btn-ghost" data-i18n="heroCtaProjects">Projects</a>
+          <a href="https://github.com/MIA-Ether" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="heroCtaGithub">GitHub</a>
+        </div>
+      </div>
+      <div class="hero-depth" aria-hidden="true">
+        <span class="depth-star"></span>
+        <span class="depth-star"></span>
+        <span class="depth-star"></span>
+        <span class="depth-star"></span>
+        <span class="depth-star"></span>
+      </div>
+    </section>
+
+    <section class="about section" id="about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <h2 class="section-label" id="aboutTitle"><span class="mono">01</span> <span data-i18n="aboutTitle">About</span></h2>
+        <div class="about-grid">
+          <div class="about-content">
+            <p class="about-lead" data-i18n="aboutLead">Who is MIA_Ether</p>
+            <p data-i18n="aboutP1">I work at the intersection of AI, quant research, and agent engineering. Most of my current work is built in public.</p>
+            <p data-i18n="aboutP2">Right now I care about turning curiosity into systems that run: research → plan → code → test → review → iterate.</p>
+          </div>
+          <div class="identity-stack">
+            <div class="identity-item">
+              <span class="identity-index mono">01</span>
+              <span class="identity-name" data-i18n="identityAI">AI</span>
+              <span class="identity-note" data-i18n="identityAINote">Models, tools, interfaces</span>
+            </div>
+            <div class="identity-item">
+              <span class="identity-index mono">02</span>
+              <span class="identity-name" data-i18n="identityQuant">Quant</span>
+              <span class="identity-note" data-i18n="identityQuantNote">Markets, data, risk</span>
+            </div>
+            <div class="identity-item">
+              <span class="identity-index mono">03</span>
+              <span class="identity-name" data-i18n="identityAgents">Agents</span>
+              <span class="identity-note" data-i18n="identityAgentsNote">Workflows, automation, review</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="building section" id="building" aria-labelledby="buildingTitle">
+      <div class="container">
+        <h2 class="section-label" id="buildingTitle"><span class="mono">02</span> <span data-i18n="buildingTitle">Currently Building</span></h2>
+        <p class="section-desc" data-i18n="buildingDesc">A live research and paper-trading workbench focused on BTC/ETH.</p>
+        <div class="pipeline" role="list" aria-label="Workbench pipeline">
+          <div class="pipeline-node" role="listitem" tabindex="0">
+            <span class="pipeline-index mono">01</span>
+            <span class="pipeline-name" data-i18n="pipeMarket">Market Data</span>
+            <span class="pipeline-hint mono" data-i18n="pipeHint">live / historical</span>
+          </div>
+          <div class="pipeline-connector" aria-hidden="true"></div>
+          <div class="pipeline-node" role="listitem" tabindex="0">
+            <span class="pipeline-index mono">02</span>
+            <span class="pipeline-name" data-i18n="pipeStrategy">Strategy</span>
+            <span class="pipeline-hint mono" data-i18n="pipeHint2">rules / regimes</span>
+          </div>
+          <div class="pipeline-connector" aria-hidden="true"></div>
+          <div class="pipeline-node" role="listitem" tabindex="0">
+            <span class="pipeline-index mono">03</span>
+            <span class="pipeline-name" data-i18n="pipeRisk">Risk</span>
+            <span class="pipeline-hint mono" data-i18n="pipeHint3">limits / drawdown</span>
+          </div>
+          <div class="pipeline-connector" aria-hidden="true"></div>
+          <div class="pipeline-node" role="listitem" tabindex="0">
+            <span class="pipeline-index mono">04</span>
+            <span class="pipeline-name" data-i18n="pipeExecution">Execution</span>
+            <span class="pipeline-hint mono" data-i18n="pipeHint4">paper / simulation</span>
+          </div>
+          <div class="pipeline-connector" aria-hidden="true"></div>
+          <div class="pipeline-node" role="listitem" tabindex="0">
+            <span class="pipeline-index mono">05</span>
+            <span class="pipeline-name" data-i18n="pipePortfolio">Portfolio</span>
+            <span class="pipeline-hint mono" data-i18n="pipeHint5">exposure / review</span>
+          </div>
+          <div class="pipeline-connector" aria-hidden="true"></div>
+          <div class="pipeline-node" role="listitem" tabindex="0">
+            <span class="pipeline-index mono">06</span>
+            <span class="pipeline-name" data-i18n="pipeWorkbench">Workbench</span>
+            <span class="pipeline-hint mono" data-i18n="pipeHint6">tests / iterations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured section" id="featured" aria-labelledby="featuredTitle">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-label" id="featuredTitle"><span class="mono">03</span> <span data-i18n="featuredTitle">Featured Project</span></h2>
+          <p class="section-desc" data-i18n="featuredDesc">The most active public project right now.</p>
+        </div>
+        <article class="featured-card" aria-label="Featured project btc-eth-trading-system">
+          <div class="featured-header">
+            <div>
+              <h3 class="featured-name">btc-eth-trading-system</h3>
+              <p class="featured-meta mono" data-i18n="featuredMeta">BTC / ETH · Quantitative Research · Backtesting · Paper Trading</p>
+            </div>
+            <span class="featured-badge mono" data-i18n="featuredBadge">122 Tests Passing</span>
+          </div>
+          <div class="featured-body">
+            <p data-i18n="featuredBody">Research, backtest, and review quant strategies with a disciplined risk-first workflow. This repo contains core modules for market data, strategies, execution, portfolio, and risk.</p>
+            <ul class="featured-tags" aria-label="Project capabilities">
+              <li data-i18n="featTagBacktest">Backtesting</li>
+              <li data-i18n="featTagPaper">Paper Trading</li>
+              <li data-i18n="featTagRisk">Risk</li>
+              <li data-i18n="featTagPortfolio">Portfolio</li>
+              <li data-i18n="featTagResearch">Quant Research</li>
+            </ul>
+          </div>
+          <div class="featured-footer">
+            <a class="btn btn-primary" href="https://github.com/MIA-Ether/btc-eth-trading-system" target="_blank" rel="noopener" data-i18n="featuredCta">View Repository</a>
+            <span class="featured-note" data-i18n="featuredNote">Not live trading. Not financial advice.</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="projects section" id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-label" id="projectsTitle"><span class="mono">04</span> <span data-i18n="projectsTitle">All Projects</span></h2>
+          <p class="section-desc" data-i18n="projectsDesc">Public repositories from GitHub, sorted by recently updated.</p>
+        </div>
+        <div class="projects-toolbar">
+          <div class="filter-bar" id="filterBar" role="tablist" aria-label="Project filters">
+            <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true" data-i18n="filterAll">All</button>
+            <button type="button" class="filter-btn" data-filter="AI" role="tab" aria-selected="false">AI</button>
+            <button type="button" class="filter-btn" data-filter="QUANT" role="tab" aria-selected="false">Quant</button>
+            <button type="button" class="filter-btn" data-filter="TOOLS" role="tab" aria-selected="false">Tools</button>
+            <button type="button" class="filter-btn" data-filter="WEB" role="tab" aria-selected="false">Web</button>
+            <button type="button" class="filter-btn" data-filter="OTHER" role="tab" aria-selected="false">Other</button>
+          </div>
+          <p class="projects-status mono" id="projectsStatus" aria-live="polite" data-i18n="loading">Loading repositories…</p>
+        </div>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <section class="activity section" id="activity" aria-labelledby="activityTitle">
+      <div class="container">
+        <h2 class="section-label" id="activityTitle"><span class="mono">05</span> <span data-i18n="activityTitle">GitHub Activity</span></h2>
+        <div class="activity-panels">
+          <div class="activity-panel">
+            <p class="activity-kicker mono" data-i18n="activityRepos">Public Repositories</p>
+            <p class="activity-value mono" id="activityRepos">—</p>
+          </div>
+          <div class="activity-panel">
+            <p class="activity-kicker mono" data-i18n="activityStars">Stars</p>
+            <p class="activity-value mono" id="activityStars">—</p>
+          </div>
+          <div class="activity-panel">
+            <p class="activity-kicker mono" data-i18n="activityForks">Forks</p>
+            <p class="activity-value mono" id="activityForks">—</p>
+          </div>
+          <div class="activity-panel">
+            <p class="activity-kicker mono" data-i18n="activityUpdated">Latest Update</p>
+            <p class="activity-value mono" id="activityUpdated">—</p>
+          </div>
+        </div>
+        <div class="activity-chart" aria-hidden="true">
+          <canvas id="activityCanvas"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="agentlab section" id="agentlab" aria-labelledby="labTitle">
+      <div class="container">
+        <h2 class="section-label" id="labTitle"><span class="mono">06</span> <span data-i18n="labTitle">Agent Engineering</span></h2>
+        <p class="section-desc" data-i18n="labDesc">This is how I work with agents.</p>
+        <div class="workflow" role="list" aria-label="Agent workflow">
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-index mono">01</span>
+            <span class="workflow-name" data-i18n="wfResearch">Research</span>
+          </div>
+          <div class="workflow-arrow" aria-hidden="true">→</div>
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-index mono">02</span>
+            <span class="workflow-name" data-i18n="wfPlan">Plan</span>
+          </div>
+          <div class="workflow-arrow" aria-hidden="true">→</div>
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-index mono">03</span>
+            <span class="workflow-name" data-i18n="wfCode">Code</span>
+          </div>
+          <div class="workflow-arrow" aria-hidden="true">→</div>
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-index mono">04</span>
+            <span class="workflow-name" data-i18n="wfTest">Test</span>
+          </div>
+          <div class="workflow-arrow" aria-hidden="true">→</div>
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-index mono">05</span>
+            <span class="workflow-name" data-i18n="wfReview">Review</span>
+          </div>
+          <div class="workflow-arrow" aria-hidden="true">→</div>
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-index mono">06</span>
+            <span class="workflow-name" data-i18n="wfIterate">Iterate</span>
+          </div>
+        </div>
+        <p class="lab-note" data-i18n="labNote">I use tools like Hermes Agent and GLM-5.2 as part of that loop, not as a replacement for judgment.</p>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <h2 class="section-label" id="contactTitle"><span class="mono">07</span> <span data-i18n="contactTitle">Contact</span></h2>
+        <p class="section-desc" data-i18n="contactDesc">Connect across the web.</p>
+        <div class="contact-grid">
+          <a class="contact-card" href="https://x.com/MIA03ther" target="_blank" rel="noopener">
+            <span class="contact-label mono">X</span>
+            <span class="contact-value">@MIA03ther</span>
+          </a>
+          <a class="contact-card" href="https://github.com/MIA-Ether" target="_blank" rel="noopener">
+            <span class="contact-label mono">GITHUB</span>
+            <span class="contact-value">MIA-Ether</span>
+          </a>
+          <a class="contact-card" href="https://space.bilibili.com/451863946" target="_blank" rel="noopener">
+            <span class="contact-label mono">BILIBILI</span>
+            <span class="contact-value">space/451863946</span>
+          </a>
+          <a class="contact-card" href="https://music.163.com/#/user/home?id=13872715631" target="_blank" rel="noopener">
+            <span class="contact-label mono">NETEASE</span>
+            <span class="contact-value">Music</span>
+          </a>
+          <a class="contact-card" href="mailto:mia03ther@gmail.com">
+            <span class="contact-label mono">EMAIL</span>
+            <span class="contact-value">mia03ther@gmail.com</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="logo-mark" aria-hidden="true">M</span><span>MIA_Ether</span></div>
+      <p class="footer-copy mono">AI · QUANT · AGENTS</p>
+      <div class="footer-links">
+        <a href="https://x.com/MIA03ther" target="_blank" rel="noopener" aria-label="X">X</a>
+        <a href="https://github.com/MIA-Ether" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <a href="#contact" data-i18n="footerConnect">Connect</a>
+      </div>
+      <div class="footer-friends">
+        <span class="friends-label mono">Friends</span>
+        <a href="https://mtcopilot.xyz" target="_blank" rel="noopener">Louisabcd</a>
+        <a href="https://20090625.xyz/" target="_blank" rel="noopener">Brock</a>
+      </div>
+      <p class="footer-note mono">© <span id="year"></span> MIA_Ether</p>
+    </div>
+  </footer>
+
+  <div class="terminal-overlay" id="terminalOverlay" hidden>
+    <div class="terminal-window" role="dialog" aria-modal="true" aria-label="Terminal">
+      <div class="terminal-bar">
+        <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="mono terminal-title">mia@ether:~</span>
+        <button class="terminal-close" id="terminalClose" aria-label="Close terminal">×</button>
+      </div>
+      <div class="terminal-body" id="terminalBody"></div>
+      <div class="terminal-input-row">
+        <span class="mono t-prompt"><span class="t-green">mia@ether</span>:<span class="t-cyan">~</span>$</span>
+        <input type="text" id="terminalInput" class="terminal-input mono" autocomplete="off" spellcheck="false" placeholder="type help" aria-label="Terminal input" />
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
